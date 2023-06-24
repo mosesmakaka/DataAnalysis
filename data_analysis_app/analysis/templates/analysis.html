@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Analysis Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        /* Add your custom CSS styles here */
+    </style>
+</head>
+<body>
+    <h1 class="animate__animated animate__fadeIn">Data Analysis Results</h1>
+
+    {% if insights %}
+        <h2 class="animate__animated animate__fadeIn">Insights</h2>
+        <ul class="animate__animated animate__fadeIn">
+            {% for key, value in insights.items %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if recommendations %}
+        <h2 class="animate__animated animate__fadeIn">Recommendations</h2>
+        <p class="animate__animated animate__fadeIn">{{ recommendations }}</p>
+    {% endif %}
+
+    <script>
+        $(document).ready(function() {
+        // Apply animations to insights
+        $('.animate__fadeIn').each(function(index) {
+            $(this).addClass('animate__animated animate__fadeIn').css('animation-delay', `${index * 200}ms`);
+        });
+
+        // Apply animation to recommendations
+        $('.animate__fadeIn').last().addClass('animate__animated animate__fadeInUp').css('animation-delay', '400ms');
+    });
+    </script>
+</body>
+</html>
