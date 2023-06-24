@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "analysis",
+    "django_extensions",
+    "django_pandas",
+    "data_analysis_app",
 ]
 
 MIDDLEWARE = [

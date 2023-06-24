@@ -3,7 +3,10 @@ from django.shortcuts import render
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
-# 
+def home(request):
+    # Add your view logic here
+    return render(request, 'home.html')
+
 def analyze_data(request):
     if request.method == 'POST' and request.FILES['file']:
         # Open file selection dialog
